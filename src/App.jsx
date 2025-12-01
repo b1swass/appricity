@@ -33,6 +33,21 @@ function useInView(options = {}) {
 // --- Components ---
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -42,7 +57,10 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl animate-fade-in-down">
-      <div className="modern-glass rounded-full px-6 py-4 flex items-center justify-between">
+      <div className={`rounded-full px-6 py-4 flex items-center justify-between transition-all duration-300 ${isScrolled
+        ? 'bg-white/70 backdrop-blur-3xl border border-white/50 shadow-xl shadow-black/10'
+        : 'bg-white/40 backdrop-blur-3xl border border-white/40 shadow-lg shadow-black/5'
+        }`}>
         <div className="flex-shrink-0 cursor-pointer flex items-center gap-2" onClick={() => scrollToSection('home')}>
           <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-black/10 transform rotate-3">A</div>
           <span className="font-display font-bold text-2xl tracking-tight text-gray-800">Apricity</span>
@@ -542,46 +560,51 @@ const Contact = () => {
 };
 
 const Footer = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="relative pt-48 pb-12 overflow-hidden text-white">
-      {/* Real Mountain Background Image */}
+    <footer className="relative py-16 overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/footer-news.jpg"
-          alt="Snow thinning in Humla mountains"
+          alt="Mountain background"
           className="w-full h-full object-cover object-center"
         />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+        {/* Subtle overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/70 to-white/60"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          {/* Brand & Slogan */}
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-black/30 backdrop-blur-sm">A</div>
-              <span className="font-display font-bold text-2xl text-white shadow-black drop-shadow-md">Apricity</span>
+              <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-lg">A</div>
+              <span className="font-display font-bold text-3xl text-gray-900">Apricity</span>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              We build digital products with warmth, precision, and a touch of Himalayan spirit.
+            <p className="text-gray-700 text-base leading-relaxed">
+              Digital products with clarity and precision.
             </p>
-            <div className="inline-block px-4 py-2 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md">
-              <p className="text-gray-300 font-bold tracking-widest uppercase text-xs">Slogan</p>
-              <p className="text-white font-display font-bold text-lg">Forged in the Himalayas</p>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-orange-400 uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-base mb-5 text-gray-900 uppercase tracking-wider">Quick Links</h4>
+            <ul className="space-y-2">
               {['Home', 'Services', 'Process', 'Work', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-500 group-hover:scale-150 transition-transform"></span>
+                  <button
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className="text-gray-700 hover:text-gray-900 transition-colors text-base font-medium"
+                  >
                     {item}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -589,46 +612,44 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-orange-400 uppercase tracking-wider">Contact</h4>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-start gap-3">
-                <span className="text-xl">📍</span>
-                <span>Kathmandu, Nepal<br />Thamel, 44600</span>
+            <h4 className="font-bold text-base mb-5 text-gray-900 uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-3 text-gray-700 text-base">
+              <li>Kathmandu, Nepal</li>
+              <li>
+                <a href="mailto:hello.apricitystudios@gmail.com" className="hover:text-gray-900 transition-colors font-medium">
+                  hello@apricity.com
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl">📧</span>
-                <a href="mailto:hello@apricity.com" className="hover:text-white transition-colors">hello@apricity.com</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl">📞</span>
-                <a href="tel:+9779800000000" className="hover:text-white transition-colors">+977 980 000 0000</a>
+              <li>
+                <a href="tel:+9779800000000" className="hover:text-gray-900 transition-colors font-medium">
+                  +977 980 000 0000
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Map */}
-          <div className="md:col-span-1">
-            <h4 className="font-bold text-lg mb-6 text-orange-400 uppercase tracking-wider">Location</h4>
-            <div className="w-full h-48 rounded-2xl overflow-hidden border border-white/20 shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31625951288!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1652345678901!5m2!1sen!2snp"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Apricity Studio Location"
-              ></iframe>
+          {/* Social / Extra */}
+          <div>
+            <h4 className="font-bold text-base mb-5 text-gray-900 uppercase tracking-wider">Follow</h4>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-900 hover:bg-black flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-900 hover:bg-black flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-900 hover:bg-black flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342z" /></svg>
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+        <div className="border-t border-gray-300/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-700">
           <p>&copy; {new Date().getFullYear()} Apricity Studio. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-gray-900 transition-colors font-medium">Privacy</a>
+            <a href="#" className="hover:text-gray-900 transition-colors font-medium">Terms</a>
           </div>
         </div>
       </div>
