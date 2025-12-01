@@ -14,7 +14,7 @@ const ServiceDetail = () => {
     const services = {
         'web-development': {
             title: "Web Development",
-            icon: <Code2 size={80} className="text-orange-500" />,
+            icon: <Code2 size={80} className="text-gray-800" />,
             tagline: "Digital experiences that leave a mark.",
             description: "We don't just build websites; we craft digital ecosystems. Our web development services blend aesthetic brilliance with technical robustness, ensuring your brand stands out in a crowded digital landscape.",
             features: [
@@ -27,7 +27,7 @@ const ServiceDetail = () => {
         },
         'mobile-app-development': {
             title: "Mobile Apps",
-            icon: <Smartphone size={80} className="text-orange-500" />,
+            icon: <Smartphone size={80} className="text-gray-800" />,
             tagline: "Your brand, in their pocket.",
             description: "Native and cross-platform mobile applications that offer seamless performance and intuitive user experiences. We build apps that users love to open.",
             features: [
@@ -40,7 +40,7 @@ const ServiceDetail = () => {
         },
         'software-development': {
             title: "Software Dev",
-            icon: <Terminal size={80} className="text-orange-500" />,
+            icon: <Terminal size={80} className="text-gray-800" />,
             tagline: "Powering your business logic.",
             description: "Custom software solutions that streamline operations, automate workflows, and solve complex business challenges. We build the tools that power your growth.",
             features: [
@@ -53,7 +53,7 @@ const ServiceDetail = () => {
         },
         'graphics-branding': {
             title: "Graphics & Brand",
-            icon: <Palette size={80} className="text-orange-500" />,
+            icon: <Palette size={80} className="text-gray-800" />,
             tagline: "Visual storytelling for the modern age.",
             description: "Your brand is more than a logo; it's a feeling. We create cohesive visual identities that resonate with your audience and communicate your values instantly.",
             features: [
@@ -66,7 +66,7 @@ const ServiceDetail = () => {
         },
         'motion-graphics-vfx': {
             title: "Motion & VFX",
-            icon: <Clapperboard size={80} className="text-orange-500" />,
+            icon: <Clapperboard size={80} className="text-gray-800" />,
             tagline: "Moving pictures that move people.",
             description: "Capture attention and explain complex ideas with dynamic motion graphics and visual effects. We bring static assets to life.",
             features: [
@@ -89,7 +89,7 @@ const ServiceDetail = () => {
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Service Not Found</h2>
                     <button
                         onClick={() => navigate('/')}
-                        className="text-orange-500 font-bold hover:underline"
+                        className="text-gray-800 font-bold hover:underline"
                     >
                         Go Home
                     </button>
@@ -99,18 +99,18 @@ const ServiceDetail = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#FFFBF5] relative overflow-hidden font-sans selection:bg-[#FF8A00] selection:text-white pb-20">
+        <div className="min-h-screen bg-[#EEEEEE] relative overflow-hidden font-sans selection:bg-gray-800 selection:text-white pb-20">
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none fixed">
-                <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-orange-300/20 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 animate-blob"></div>
-                <div className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-yellow-300/20 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 animate-blob animation-delay-2000"></div>
+                <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-gray-300/20 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 animate-blob"></div>
+                <div className="absolute bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-slate-300/20 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 animate-blob animation-delay-2000"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 relative z-10">
                 {/* Navigation */}
                 <button
                     onClick={() => navigate('/')}
-                    className="group flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors mb-20 font-medium text-lg"
+                    className="group flex items-center gap-3 text-gray-600 hover:text-gray-900 transition-colors mb-20 font-medium text-lg"
                 >
                     <div className="p-3 rounded-full bg-white/40 border border-white/60 group-hover:bg-white group-hover:shadow-md transition-all">
                         <ArrowLeft size={24} />
@@ -121,7 +121,7 @@ const ServiceDetail = () => {
                 {/* Hero Section */}
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-40">
                     <div className="order-2 lg:order-1">
-                        <div className="inline-block mb-8 px-5 py-2 rounded-full bg-orange-100/80 border border-orange-200 text-orange-700 font-bold text-sm tracking-widest uppercase shadow-sm backdrop-blur-sm">
+                        <div className="inline-block mb-8 px-5 py-2 rounded-full bg-white/80 border border-gray-200 text-gray-700 font-bold text-sm tracking-widest uppercase shadow-sm backdrop-blur-sm">
                             Service
                         </div>
                         <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
@@ -140,8 +140,8 @@ const ServiceDetail = () => {
                         </div>
                     </div>
                     <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-                        <div className="absolute inset-0 bg-gradient-to-br from-orange-200 to-yellow-200 rounded-[3rem] rotate-6 opacity-40 blur-3xl transform scale-90"></div>
-                        <div className="relative warm-glass rounded-[3rem] p-16 md:p-24 border border-white/60 shadow-2xl shadow-orange-500/10 flex items-center justify-center aspect-square w-full max-w-[500px] backdrop-blur-xl">
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-slate-200 rounded-[3rem] rotate-6 opacity-40 blur-3xl transform scale-90"></div>
+                        <div className="relative warm-glass rounded-[3rem] p-16 md:p-24 border border-white/60 shadow-2xl shadow-black/5 flex items-center justify-center aspect-square w-full max-w-[500px] backdrop-blur-xl">
                             <div className="relative z-10 transform hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
                                 {service.icon}
                             </div>
@@ -153,14 +153,14 @@ const ServiceDetail = () => {
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 mb-40">
                     {/* Description & Process */}
                     <div className="lg:col-span-7 space-y-16">
-                        <div className="warm-glass p-10 md:p-14 rounded-[3rem] border border-white/60 shadow-lg shadow-orange-500/5 backdrop-blur-md">
+                        <div className="warm-glass p-10 md:p-14 rounded-[3rem] border border-white/60 shadow-lg shadow-black/5 backdrop-blur-md">
                             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 font-display">Overview</h3>
                             <p className="text-xl text-gray-700 leading-relaxed font-light">
                                 {service.description}
                             </p>
                         </div>
 
-                        <div className="bg-white/60 p-10 md:p-14 rounded-[3rem] border border-white/60 shadow-lg shadow-orange-500/5 backdrop-blur-md">
+                        <div className="bg-white/60 p-10 md:p-14 rounded-[3rem] border border-white/60 shadow-lg shadow-black/5 backdrop-blur-md">
                             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 font-display">Our Process</h3>
                             <p className="text-xl text-gray-700 leading-relaxed font-light">
                                 {service.process}
@@ -170,9 +170,9 @@ const ServiceDetail = () => {
 
                     {/* Features Sidebar */}
                     <div className="lg:col-span-5">
-                        <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-[3rem] p-10 md:p-12 text-white shadow-2xl shadow-orange-500/30 relative overflow-hidden sticky top-8">
+                        <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-10 md:p-12 text-white shadow-2xl shadow-black/20 relative overflow-hidden sticky top-8">
                             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/20 rounded-full blur-3xl -ml-16 -mb-16"></div>
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/20 rounded-full blur-3xl -ml-16 -mb-16"></div>
 
                             <h3 className="text-3xl md:text-4xl font-bold mb-10 font-display relative z-10">Key Features</h3>
                             <div className="space-y-10 relative z-10">
@@ -182,7 +182,7 @@ const ServiceDetail = () => {
                                             <span className="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
                                             {feature.title}
                                         </h4>
-                                        <p className="text-orange-50 leading-relaxed text-base opacity-90 group-hover:opacity-100 transition-opacity pl-5 border-l border-white/20">
+                                        <p className="text-gray-100 leading-relaxed text-base opacity-90 group-hover:opacity-100 transition-opacity pl-5 border-l border-white/20">
                                             {feature.desc}
                                         </p>
                                     </div>
@@ -198,7 +198,7 @@ const ServiceDetail = () => {
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                             <div>
                                 <h2 className="font-display text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                                    Related <span className="text-orange-500">Work</span>
+                                    Related <span className="text-gray-500">Work</span>
                                 </h2>
                                 <p className="text-xl text-gray-600 font-light max-w-2xl">
                                     See what we've built in this space. Real results for real clients.
@@ -210,7 +210,7 @@ const ServiceDetail = () => {
                             {relatedProjects.map((project, index) => (
                                 <div
                                     key={index}
-                                    className="group warm-glass rounded-[2.5rem] p-5 hover:-translate-y-3 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/15 cursor-pointer border border-white/50"
+                                    className="group warm-glass rounded-[2.5rem] p-5 hover:-translate-y-3 transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 cursor-pointer border border-white/50"
                                 >
                                     <div className={`h-80 ${project.color} rounded-[2rem] w-full mb-8 overflow-hidden relative shadow-inner`}>
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
@@ -224,7 +224,7 @@ const ServiceDetail = () => {
                                         </div>
                                     </div>
                                     <div className="px-4 pb-4">
-                                        <h3 className="text-3xl font-bold text-gray-900 font-display mb-3 group-hover:text-orange-600 transition-colors">
+                                        <h3 className="text-3xl font-bold text-gray-900 font-display mb-3 group-hover:text-gray-800 transition-colors">
                                             {project.title}
                                         </h3>
                                         <p className="text-gray-600 mb-6 line-clamp-2 text-base font-medium leading-relaxed">
@@ -232,7 +232,7 @@ const ServiceDetail = () => {
                                         </p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tags.map(tag => (
-                                                <span key={tag} className="px-4 py-1.5 rounded-full bg-white border border-orange-100 text-xs font-bold text-orange-500 uppercase tracking-wide shadow-sm">
+                                                <span key={tag} className="px-4 py-1.5 rounded-full bg-white border border-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wide shadow-sm">
                                                     {tag}
                                                 </span>
                                             ))}
@@ -247,20 +247,20 @@ const ServiceDetail = () => {
                 {/* CTA Section */}
                 <div id="contact-section" className="bg-gray-900 rounded-[3rem] p-12 md:p-32 text-center relative overflow-hidden shadow-2xl shadow-gray-900/30">
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                        <div className="absolute top-[-50%] left-[-20%] w-[1000px] h-[1000px] bg-orange-500/20 rounded-full blur-[150px] animate-pulse"></div>
-                        <div className="absolute bottom-[-50%] right-[-20%] w-[1000px] h-[1000px] bg-purple-500/20 rounded-full blur-[150px] animate-pulse animation-delay-2000"></div>
+                        <div className="absolute top-[-50%] left-[-20%] w-[1000px] h-[1000px] bg-black/20 rounded-full blur-[150px] animate-pulse"></div>
+                        <div className="absolute bottom-[-50%] right-[-20%] w-[1000px] h-[1000px] bg-slate-500/20 rounded-full blur-[150px] animate-pulse animation-delay-2000"></div>
                     </div>
 
                     <div className="relative z-10 max-w-4xl mx-auto">
                         <h2 className="font-display text-5xl md:text-7xl font-bold text-white mb-10 leading-tight">
-                            Ready to build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">extraordinary?</span>
+                            Ready to build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-500">extraordinary?</span>
                         </h2>
                         <p className="text-2xl text-gray-300 mb-16 font-light leading-relaxed">
                             Let's collaborate to bring your vision to life with the perfect blend of design and technology.
                         </p>
                         <button
                             onClick={() => navigate('/#contact')}
-                            className="bg-white text-gray-900 px-12 py-6 rounded-full font-bold text-xl hover:bg-orange-50 transition-all shadow-xl shadow-white/10 hover:scale-105"
+                            className="bg-white text-gray-900 px-12 py-6 rounded-full font-bold text-xl hover:bg-gray-50 transition-all shadow-xl shadow-white/10 hover:scale-105"
                         >
                             Get in Touch
                         </button>

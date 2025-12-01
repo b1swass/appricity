@@ -7,11 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FF8A00', // Vibrant Orange
-        secondary: '#FFD369', // Soft Yellow
-        accent: '#222222', // Dark Text
-        light: '#FFFBF5', // Warm White/Beige
+        glass: {
+          100: 'rgba(255, 255, 255, 0.1)',
+          200: 'rgba(255, 255, 255, 0.2)',
+          300: 'rgba(255, 255, 255, 0.3)',
+          400: 'rgba(255, 255, 255, 0.4)',
+          500: 'rgba(255, 255, 255, 0.5)',
+          600: 'rgba(255, 255, 255, 0.6)',
+          700: 'rgba(255, 255, 255, 0.7)',
+          800: 'rgba(255, 255, 255, 0.8)',
+          900: 'rgba(255, 255, 255, 0.9)',
+        },
         surface: '#FFFFFF',
+        background: '#EEEEEE',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],

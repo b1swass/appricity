@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl animate-fade-in-down">
       <div className="modern-glass rounded-full px-6 py-4 flex items-center justify-between">
         <div className="flex-shrink-0 cursor-pointer flex items-center gap-2" onClick={() => scrollToSection('home')}>
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/20 transform rotate-3">A</div>
+          <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-black/10 transform rotate-3">A</div>
           <span className="font-display font-bold text-2xl tracking-tight text-gray-800">Apricity</span>
         </div>
         <div className="hidden md:flex items-center gap-2">
@@ -52,14 +52,14 @@ const Navbar = () => {
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="text-gray-600 hover:text-orange-500 px-4 py-2 rounded-full text-sm font-semibold transition-all hover:bg-orange-50"
+              className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full text-sm font-semibold transition-all hover:bg-gray-100"
             >
               {item}
             </button>
           ))}
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all ml-2"
+            className="bg-gray-900 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-0.5 transition-all ml-2"
           >
             Let's Talk
           </button>
@@ -89,9 +89,9 @@ const Hero = () => {
     <section id="home" className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden relative min-h-screen flex items-center">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-orange-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-yellow-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-pink-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-gray-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-gray-400/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-[-20%] left-[20%] w-[600px] h-[600px] bg-slate-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-center">
@@ -99,28 +99,28 @@ const Hero = () => {
           ref={ref}
           className={`transition-all duration-1000 ease-out flex flex-col items-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <div className="inline-block mb-8 px-6 py-2 rounded-full bg-white/60 border border-orange-200 backdrop-blur-sm text-sm font-bold text-orange-600 tracking-widest uppercase shadow-sm">
+          <div className="inline-block mb-8 px-6 py-2 rounded-full bg-white/60 border border-gray-200 backdrop-blur-sm text-sm font-bold text-gray-600 tracking-widest uppercase shadow-sm">
             Apricity Studio
           </div>
 
           <h1 className="font-display text-6xl md:text-9xl font-extrabold leading-[1.1] mb-8 text-gray-900 max-w-5xl mx-auto tracking-tight">
             Digital products with <br />
-            <span className="relative inline-block text-gradient-sun">
-              warmth
-              <svg className="absolute w-full h-4 -bottom-2 left-0 text-yellow-400 -z-10 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <span className="relative inline-block text-gray-900">
+              clarity
+              <svg className="absolute w-full h-4 -bottom-2 left-0 text-gray-300 -z-10 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
               </svg>
             </span>.
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto font-medium">
-            Apricity Studio blends design, code, and visuals to build warm, human digital experiences that people love.
+            Apricity Studio blends design, code, and visuals to build clean, human digital experiences that people love.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-12 py-5 rounded-full shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 transition-all font-bold text-xl flex items-center gap-3 group"
+              className="bg-gray-900 text-white px-12 py-5 rounded-full shadow-xl shadow-black/20 hover:shadow-black/40 hover:-translate-y-1 transition-all font-bold text-xl flex items-center gap-3 group"
             >
               Start a Project
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,7 +129,7 @@ const Hero = () => {
             </button>
             <button
               onClick={() => scrollToSection('work')}
-              className="bg-white/80 text-gray-800 border-2 border-orange-100 px-12 py-5 rounded-full hover:border-orange-300 hover:bg-orange-50 transition-all font-bold text-xl shadow-lg shadow-orange-500/10 backdrop-blur-sm"
+              className="bg-white/80 text-gray-800 border-2 border-gray-100 px-12 py-5 rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all font-bold text-xl shadow-lg shadow-black/5 backdrop-blur-sm"
             >
               View Our Work
             </button>
@@ -137,8 +137,8 @@ const Hero = () => {
 
           {/* Floating Elements */}
           <div className="mt-24 relative w-full max-w-4xl mx-auto hidden md:block">
-            <div className="absolute top-0 left-10 w-24 h-24 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full blur-xl opacity-60 animate-float"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-pink-300 to-rose-300 rounded-full blur-xl opacity-60 animate-float animation-delay-2000"></div>
+            <div className="absolute top-0 left-10 w-24 h-24 bg-gray-200 rounded-full blur-xl opacity-60 animate-float"></div>
+            <div className="absolute bottom-10 right-10 w-32 h-32 bg-slate-200 rounded-full blur-xl opacity-60 animate-float animation-delay-2000"></div>
           </div>
         </div>
       </div>
@@ -156,31 +156,31 @@ const Services = () => {
       id: "web-development",
       title: "Web Development",
       desc: "Modern, responsive websites, landing pages, and e-commerce that actually convert.",
-      icon: <Code2 size={40} className="text-orange-500" />
+      icon: <Code2 size={40} className="text-gray-800" />
     },
     {
       id: "mobile-app-development",
       title: "Mobile App Development",
       desc: "Android & iOS apps with startup-style UI/UX, built to scale.",
-      icon: <Smartphone size={40} className="text-orange-500" />
+      icon: <Smartphone size={40} className="text-gray-800" />
     },
     {
       id: "software-development",
       title: "Software Development",
       desc: "Custom tools, dashboards, and internal systems for growing teams.",
-      icon: <Terminal size={40} className="text-orange-500" />
+      icon: <Terminal size={40} className="text-gray-800" />
     },
     {
       id: "graphics-branding",
       title: "Graphics & Branding",
       desc: "Logos, brand identity, social media creatives, and campaign visuals.",
-      icon: <Palette size={40} className="text-orange-500" />
+      icon: <Palette size={40} className="text-gray-800" />
     },
     {
       id: "motion-graphics-vfx",
       title: "Motion Graphics & VFX",
       desc: "Explainer videos, promos, and visual effects that make your brand stand out.",
-      icon: <Clapperboard size={40} className="text-orange-500" />
+      icon: <Clapperboard size={40} className="text-gray-800" />
     }
   ];
 
@@ -192,10 +192,10 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10 mb-16">
         <div className="text-center">
           <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-            <span className="text-gradient-sun">Bright</span> Ideas
+            <span className="text-gray-900">Bright</span> Ideas
           </h2>
           <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto">
-            We bring warmth and clarity to every digital challenge.
+            We bring clarity to every digital challenge.
           </p>
         </div>
       </div>
@@ -203,8 +203,8 @@ const Services = () => {
       {/* Marquee Container */}
       <div className="relative w-full overflow-hidden">
         {/* Gradient Masks for smooth fade in/out */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#FFFBF5] to-transparent z-20 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#FFFBF5] to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#EEEEEE] to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#EEEEEE] to-transparent z-20 pointer-events-none"></div>
 
         <div className="flex gap-8 w-max animate-marquee pause-on-hover py-4 px-4">
           {marqueeServices.map((service, index) => (
@@ -215,18 +215,18 @@ const Services = () => {
             >
               {/* Circular Icon Container */}
               <div className="relative w-20 h-20 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full border-2 border-orange-100 group-hover:border-orange-300 transition-colors duration-500"></div>
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-yellow-100 flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="absolute inset-0 rounded-full border-2 border-gray-100 group-hover:border-gray-300 transition-colors duration-500"></div>
+                <div className={`w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center shadow-sm relative z-10 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-800 font-display group-hover:text-orange-600 transition-colors">{service.title}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 font-display group-hover:text-gray-900 transition-colors">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed font-medium text-sm">{service.desc}</p>
 
               {/* Interactive Button-like Element */}
               <div className="mt-auto pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <span className="text-orange-500 font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+                <span className="text-gray-800 font-bold text-sm uppercase tracking-wider flex items-center gap-2">
                   Explore <span className="text-xl">→</span>
                 </span>
               </div>
@@ -241,10 +241,10 @@ const Services = () => {
 const Process = () => {
   const steps = [
     { title: "Discover", desc: "We listen to your story." },
-    { title: "Design", desc: "We sketch the sunlight." },
-    { title: "Build", desc: "We code with warmth." },
+    { title: "Design", desc: "We sketch the structure." },
+    { title: "Build", desc: "We code with precision." },
     { title: "Launch", desc: "We rise together." },
-    { title: "Support", desc: "We keep it shining." }
+    { title: "Support", desc: "We keep it running." }
   ];
 
   return (
@@ -252,15 +252,15 @@ const Process = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24">
           <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 text-gray-900">
-            The <span className="text-orange-500">Path</span>
+            The <span className="text-gray-500">Path</span>
           </h2>
-          <p className="text-xl text-gray-600 font-medium">A clear journey from dawn to day.</p>
+          <p className="text-xl text-gray-600 font-medium">A clear journey from start to finish.</p>
         </div>
 
         <div className="relative">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-1 bg-orange-100 -translate-y-1/2 rounded-full">
-            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-orange-300 to-yellow-300 w-full opacity-50"></div>
+          <div className="hidden md:block absolute top-12 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 rounded-full">
+            <div className="absolute top-0 left-0 h-full bg-gray-300 w-full opacity-50"></div>
           </div>
 
           <div className="grid gap-10 md:grid-cols-5">
@@ -273,10 +273,10 @@ const Process = () => {
                   style={{ transitionDelay: `${index * 200}ms` }}
                   className={`flex flex-col items-center text-center relative group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-700`}
                 >
-                  <div className="w-24 h-24 rounded-full bg-white border-4 border-orange-100 text-orange-500 flex items-center justify-center font-display font-bold text-2xl mb-6 shadow-lg shadow-orange-500/10 group-hover:scale-110 group-hover:border-orange-400 group-hover:shadow-orange-500/30 transition-all duration-500 relative z-10">
+                  <div className="w-24 h-24 rounded-full bg-white border-4 border-gray-100 text-gray-800 flex items-center justify-center font-display font-bold text-2xl mb-6 shadow-lg shadow-black/5 group-hover:scale-110 group-hover:border-gray-300 group-hover:shadow-black/10 transition-all duration-500 relative z-10">
                     <span className="group-hover:animate-pulse">{index + 1}</span>
                   </div>
-                  <h3 className="font-display font-bold text-xl mb-2 text-gray-800 group-hover:text-orange-600 transition-colors">{step.title}</h3>
+                  <h3 className="font-display font-bold text-xl mb-2 text-gray-800 group-hover:text-gray-900 transition-colors">{step.title}</h3>
                   <p className="text-gray-600 text-sm font-medium px-2">{step.desc}</p>
                 </div>
               );
@@ -298,7 +298,7 @@ const Work = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24">
           <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 text-gray-900">
-            Selected <span className="text-orange-500">Works</span>
+            Selected <span className="text-gray-500">Works</span>
           </h2>
           <p className="text-xl text-gray-600 font-light">Digital artifacts from our lab.</p>
         </div>
@@ -318,14 +318,14 @@ const Work = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="font-display font-bold text-4xl text-white/40 uppercase tracking-widest group-hover:text-white/60 transition-colors">Project {index + 1}</span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
                 <div className="px-2 pb-4">
-                  <h3 className="text-2xl font-bold text-gray-800 font-display mb-3 group-hover:text-orange-600 transition-colors">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 font-display mb-3 group-hover:text-gray-900 transition-colors">{project.title}</h3>
                   <p className="text-gray-600 mb-6 font-light leading-relaxed">{project.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                      <span key={tag} className="inline-flex px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-xs font-bold text-orange-600 uppercase tracking-wide hover:bg-orange-100 transition-colors">
+                      <span key={tag} className="inline-flex px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wide hover:bg-gray-200 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -351,13 +351,13 @@ const About = () => {
           className={`modern-glass rounded-[3rem] p-8 md:p-20 transition-all duration-1000 ease-out relative overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {/* Background Blobs */}
-          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-orange-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob"></div>
-          <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-yellow-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-gray-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob"></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-slate-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
             <div>
               <h2 className="font-display text-4xl md:text-6xl font-bold mb-8 leading-tight text-gray-900">
-                The <span className="text-orange-500">Core</span>
+                The <span className="text-gray-500">Core</span>
               </h2>
               <p className="text-xl mb-8 leading-relaxed text-gray-600 font-light">
                 Apricity Studio is a collective of digital architects. We don't just build websites; we construct immersive digital environments. Our mission is to push the boundaries of what's possible on the web.
@@ -365,7 +365,7 @@ const About = () => {
               <ul className="space-y-4">
                 {['Based in Nepal', 'Global Reach', 'Future-Focused'].map((item, i) => (
                   <li key={i} className="flex items-center text-lg text-gray-700 font-medium">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-4 shadow-[0_0_10px_rgba(255,138,0,0.4)]"></span>
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-4 shadow-[0_0_10px_rgba(0,0,0,0.1)]"></span>
                     {item}
                   </li>
                 ))}
@@ -374,19 +374,19 @@ const About = () => {
             <div className="bg-white/40 rounded-3xl border border-white/60 p-10 text-center backdrop-blur-md shadow-xl">
               <div className="grid grid-cols-2 gap-10">
                 <div>
-                  <div className="text-5xl font-bold text-orange-500 mb-2 font-display">50+</div>
+                  <div className="text-5xl font-bold text-gray-800 mb-2 font-display">50+</div>
                   <div className="text-gray-500 font-bold text-xs uppercase tracking-widest">Systems Online</div>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-yellow-500 mb-2 font-display">5+</div>
+                  <div className="text-5xl font-bold text-gray-600 mb-2 font-display">5+</div>
                   <div className="text-gray-500 font-bold text-xs uppercase tracking-widest">Cycles</div>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-orange-500 mb-2 font-display">100%</div>
+                  <div className="text-5xl font-bold text-gray-800 mb-2 font-display">100%</div>
                   <div className="text-gray-500 font-bold text-xs uppercase tracking-widest">Uptime</div>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-yellow-500 mb-2 font-display">24/7</div>
+                  <div className="text-5xl font-bold text-gray-600 mb-2 font-display">24/7</div>
                   <div className="text-gray-500 font-bold text-xs uppercase tracking-widest">Monitoring</div>
                 </div>
               </div>
@@ -460,7 +460,7 @@ const Contact = () => {
           className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900">Establish <span className="text-orange-500">Uplink</span></h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900">Establish <span className="text-gray-500">Uplink</span></h2>
             <p className="text-xl text-gray-600 font-light">Transmit your signal. We are listening.</p>
           </div>
 
@@ -470,7 +470,7 @@ const Contact = () => {
               <p className="text-gray-600 mb-10 leading-relaxed text-lg font-light">
                 Whether you have a fully formed blueprint or just a spark of an idea, our channels are open.
               </p>
-              <a href="mailto:hello.apricitystudios@gmail.com" className="text-orange-500 font-bold text-2xl hover:text-orange-400 transition-colors break-words">
+              <a href="mailto:hello.apricitystudios@gmail.com" className="text-gray-800 font-bold text-2xl hover:text-gray-600 transition-colors break-words">
                 hello.apricitystudios@gmail.com
               </a>
             </div>
@@ -485,7 +485,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${errors.name ? 'border-red-400' : 'border-orange-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-orange-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.name ? 'border-red-400' : 'border-gray-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
                     placeholder="Your Name"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-2 font-medium">{errors.name}</p>}
@@ -499,7 +499,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${errors.email ? 'border-red-400' : 'border-orange-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-orange-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.email ? 'border-red-400' : 'border-gray-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
                     placeholder="you@example.com"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-2 font-medium">{errors.email}</p>}
@@ -512,7 +512,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${errors.message ? 'border-red-400' : 'border-orange-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-orange-500 focus:shadow-sm transition-all min-h-[140px] font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.message ? 'border-red-400' : 'border-gray-200'} px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all min-h-[140px] font-medium placeholder-gray-400`}
                     placeholder="Tell us about your project..."
                   />
                   {errors.message && <p className="text-red-500 text-sm mt-2 font-medium">{errors.message}</p>}
@@ -521,7 +521,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === 'submitting' || status === 'success'}
-                  className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed transition-all flex justify-center items-center"
+                  className="w-full bg-gray-900 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed transition-all flex justify-center items-center"
                 >
                   {status === 'submitting' ? 'Transmitting...' : status === 'success' ? 'Transmission Sent!' : 'Send Transmission'}
 
@@ -560,14 +560,14 @@ const Footer = () => {
           {/* Brand & Slogan */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/30 backdrop-blur-sm">A</div>
+              <div className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-black/30 backdrop-blur-sm">A</div>
               <span className="font-display font-bold text-2xl text-white shadow-black drop-shadow-md">Apricity</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               We build digital products with warmth, precision, and a touch of Himalayan spirit.
             </p>
             <div className="inline-block px-4 py-2 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md">
-              <p className="text-orange-300 font-bold tracking-widest uppercase text-xs">Slogan</p>
+              <p className="text-gray-300 font-bold tracking-widest uppercase text-xs">Slogan</p>
               <p className="text-white font-display font-bold text-lg">Forged in the Himalayas</p>
             </div>
           </div>
@@ -578,8 +578,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {['Home', 'Services', 'Process', 'Work', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-300 hover:text-orange-300 transition-colors flex items-center gap-2 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 group-hover:scale-150 transition-transform"></span>
+                  <a href={`#${item.toLowerCase()}`} className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-500 group-hover:scale-150 transition-transform"></span>
                     {item}
                   </a>
                 </li>
@@ -597,11 +597,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-xl">📧</span>
-                <a href="mailto:hello@apricity.com" className="hover:text-orange-300 transition-colors">hello@apricity.com</a>
+                <a href="mailto:hello@apricity.com" className="hover:text-white transition-colors">hello@apricity.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-xl">📞</span>
-                <a href="tel:+9779800000000" className="hover:text-orange-300 transition-colors">+977 980 000 0000</a>
+                <a href="tel:+9779800000000" className="hover:text-white transition-colors">+977 980 000 0000</a>
               </li>
             </ul>
           </div>
@@ -627,8 +627,8 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} Apricity Studio. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-orange-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-orange-300 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -659,7 +659,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen font-sans selection:bg-[#FF8A00] selection:text-white overflow-x-hidden">
+      <div className="min-h-screen font-sans selection:bg-gray-800 selection:text-white overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
