@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl animate-fade-in-down">
-      <div className="warm-glass rounded-full px-6 py-4 flex items-center justify-between">
+      <div className="modern-glass rounded-full px-6 py-4 flex items-center justify-between">
         <div className="flex-shrink-0 cursor-pointer flex items-center gap-2" onClick={() => scrollToSection('home')}>
           <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/20 transform rotate-3">A</div>
           <span className="font-display font-bold text-2xl tracking-tight text-gray-800">Apricity</span>
@@ -100,7 +100,7 @@ const Hero = () => {
           className={`transition-all duration-1000 ease-out flex flex-col items-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <div className="inline-block mb-8 px-6 py-2 rounded-full bg-white/60 border border-orange-200 backdrop-blur-sm text-sm font-bold text-orange-600 tracking-widest uppercase shadow-sm">
-            Digital Product Studio
+            Apricity Studio
           </div>
 
           <h1 className="font-display text-6xl md:text-9xl font-extrabold leading-[1.1] mb-8 text-gray-900 max-w-5xl mx-auto tracking-tight">
@@ -211,7 +211,7 @@ const Services = () => {
             <div
               key={index}
               onClick={() => navigate(`/services/${service.id}`)}
-              className="w-[350px] md:w-[400px] flex-shrink-0 hover-flare warm-glass rounded-[2rem] p-8 flex flex-col items-center text-center gap-6 hover:-translate-y-2 hover:shadow-sun transition-all duration-500 group cursor-pointer"
+              className="w-[350px] md:w-[400px] flex-shrink-0 hover-flare modern-glass rounded-[2rem] p-8 flex flex-col items-center text-center gap-6 hover:-translate-y-2 transition-all duration-500 group cursor-pointer"
             >
               {/* Circular Icon Container */}
               <div className="relative w-20 h-20 flex items-center justify-center">
@@ -311,7 +311,7 @@ const Work = () => {
                 key={index}
                 ref={ref}
                 style={{ transitionDelay: `${index * 150}ms` }}
-                className={`warm-glass rounded-[2rem] p-5 hover:-translate-y-3 transition-all duration-500 group hover:shadow-sun ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`modern-glass rounded-[2rem] p-5 hover:-translate-y-3 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               >
                 <div className={`h-72 ${project.color} rounded-[1.5rem] w-full mb-8 overflow-hidden relative group-hover:opacity-90 transition-opacity shadow-inner`}>
                   <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
@@ -348,7 +348,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div
           ref={ref}
-          className={`warm-glass rounded-[3rem] p-8 md:p-20 transition-all duration-1000 ease-out relative overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`modern-glass rounded-[3rem] p-8 md:p-20 transition-all duration-1000 ease-out relative overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {/* Background Blobs */}
           <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-orange-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob"></div>
@@ -465,7 +465,7 @@ const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto items-start">
-            <div className="flex flex-col justify-center warm-glass p-10 rounded-[2.5rem]">
+            <div className="flex flex-col justify-center modern-glass p-10 rounded-[2.5rem]">
               <h3 className="text-3xl font-bold mb-6 text-gray-800 font-display">Transmission Channels</h3>
               <p className="text-gray-600 mb-10 leading-relaxed text-lg font-light">
                 Whether you have a fully formed blueprint or just a spark of an idea, our channels are open.
@@ -475,7 +475,7 @@ const Contact = () => {
               </a>
             </div>
 
-            <form onSubmit={handleSubmit} className="warm-glass p-10 rounded-[2.5rem]">
+            <form onSubmit={handleSubmit} className="modern-glass p-10 rounded-[2.5rem]">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-gray-500 mb-2 uppercase tracking-wide">Identity</label>
