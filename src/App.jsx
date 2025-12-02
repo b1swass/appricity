@@ -61,11 +61,10 @@ const Navbar = () => {
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl animate-fade-in-down">
       <div
-        className={`rounded-full px-6 py-4 flex items-center justify-between transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/70 backdrop-blur-3xl border border-white/50 shadow-xl shadow-black/10"
-            : "bg-white/40 backdrop-blur-3xl border border-white/40 shadow-lg shadow-black/5"
-        }`}
+        className={`rounded-full px-6 py-4 flex items-center justify-between transition-all duration-300 ${isScrolled
+          ? "bg-white/70 backdrop-blur-3xl border border-white/50 shadow-xl shadow-black/10"
+          : "bg-white/40 backdrop-blur-3xl border border-white/40 shadow-lg shadow-black/5"
+          }`}
       >
         <div
           className="flex-shrink-0 cursor-pointer flex items-center gap-2"
@@ -88,30 +87,13 @@ const Navbar = () => {
               {item}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="bg-gray-900 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-0.5 transition-all ml-2"
-          >
-            Let's Talk
-          </button>
         </div>
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden text-gray-700">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2.5}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </div>
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="bg-gray-900 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-0.5 transition-all ml-2"
+        >
+          Let's Talk
+        </button>
       </div>
     </nav>
   );
@@ -130,7 +112,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden relative min-h-screen flex items-center"
+      className="pt-24 pb-20 md:pt-48 md:pb-32 overflow-hidden relative min-h-screen flex items-center"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
@@ -142,15 +124,14 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div
           ref={ref}
-          className={`transition-all duration-1000 ease-out flex flex-col items-center ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`transition-all duration-1000 ease-out flex flex-col items-center ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="inline-block mb-8 px-6 py-2 rounded-full bg-white/60 border border-gray-200 backdrop-blur-sm text-sm font-bold text-gray-600 tracking-widest uppercase shadow-sm">
             Apricity Studio
           </div>
 
-          <h1 className="font-display text-6xl md:text-8xl font-extrabold leading-[1.1] mb-8 text-gray-900 max-w-5xl mx-auto tracking-tight">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-8xl font-extrabold leading-[1.1] mb-8 text-gray-900 max-w-5xl mx-auto tracking-tight">
             Digital products with <br />
             <span className="relative inline-block text-gray-900">
               clarity
@@ -286,7 +267,7 @@ const Services = () => {
             <div
               key={index}
               onClick={() => navigate(`/services/${service.id}`)}
-              className="w-[350px] md:w-[400px] flex-shrink-0 hover-flare modern-glass rounded-[2rem] p-8 flex flex-col items-center text-center gap-6 hover:-translate-y-2 transition-all duration-500 group cursor-pointer"
+              className="w-[300px] md:w-[400px] flex-shrink-0 hover-flare modern-glass rounded-[2rem] p-8 flex flex-col items-center text-center gap-6 hover:-translate-y-2 transition-all duration-500 group cursor-pointer"
             >
               {/* Circular Icon Container */}
               <div className="relative w-20 h-20 flex items-center justify-center">
@@ -354,11 +335,10 @@ const Process = () => {
                   key={index}
                   ref={ref}
                   style={{ transitionDelay: `${index * 200}ms` }}
-                  className={`flex flex-col items-center text-center relative group ${
-                    isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-10"
-                  } transition-all duration-700`}
+                  className={`flex flex-col items-center text-center relative group ${isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                    } transition-all duration-700`}
                 >
                   <div className="w-24 h-24 rounded-full bg-white border-4 border-gray-100 text-gray-800 flex items-center justify-center font-display font-bold text-2xl mb-6 shadow-lg shadow-black/5 group-hover:scale-110 group-hover:border-gray-300 group-hover:shadow-black/10 transition-all duration-500 relative z-10">
                     <span className="group-hover:animate-pulse">
@@ -404,11 +384,10 @@ const Work = () => {
                 key={index}
                 ref={ref}
                 style={{ transitionDelay: `${index * 150}ms` }}
-                className={`modern-glass rounded-[2rem] p-5 hover:-translate-y-3 transition-all duration-500 group ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
+                className={`modern-glass rounded-[2rem] p-5 hover:-translate-y-3 transition-all duration-500 group ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+                  }`}
               >
                 <div
                   className={`h-72 ${project.color} rounded-[1.5rem] w-full mb-8 overflow-hidden relative group-hover:opacity-90 transition-opacity shadow-inner`}
@@ -463,9 +442,8 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div
           ref={ref}
-          className={`modern-glass rounded-[3rem] p-8 md:p-20 transition-all duration-1000 ease-out relative overflow-hidden ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`modern-glass rounded-[3rem] p-8 md:p-20 transition-all duration-1000 ease-out relative overflow-hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           {/* Background Blobs */}
           <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-gray-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob"></div>
@@ -602,9 +580,8 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div
           ref={ref}
-          className={`transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900">
@@ -615,8 +592,8 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto items-start">
-            <div className="flex flex-col justify-center modern-glass p-10 rounded-[2.5rem]">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto items-start">
+            <div className="flex flex-col justify-center modern-glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem]">
               <h3 className="text-3xl font-bold mb-6 text-gray-800 font-display">
                 Transmission Channels
               </h3>
@@ -634,7 +611,7 @@ const Contact = () => {
 
             <form
               onSubmit={handleSubmit}
-              className="modern-glass p-10 rounded-[2.5rem]"
+              className="modern-glass p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem]"
             >
               <div className="space-y-6">
                 <div>
@@ -650,9 +627,8 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${
-                      errors.name ? "border-red-400" : "border-gray-200"
-                    } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.name ? "border-red-400" : "border-gray-200"
+                      } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
                     placeholder="Your Name"
                   />
                   {errors.name && (
@@ -675,9 +651,8 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${
-                      errors.email ? "border-red-400" : "border-gray-200"
-                    } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.email ? "border-red-400" : "border-gray-200"
+                      } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all font-medium placeholder-gray-400`}
                     placeholder="you@example.com"
                   />
                   {errors.email && (
@@ -699,9 +674,8 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border ${
-                      errors.message ? "border-red-400" : "border-gray-200"
-                    } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all min-h-[140px] font-medium placeholder-gray-400`}
+                    className={`w-full rounded-xl border ${errors.message ? "border-red-400" : "border-gray-200"
+                      } px-4 py-3 bg-white/50 text-gray-800 focus:outline-none focus:bg-white focus:border-gray-500 focus:shadow-sm transition-all min-h-[140px] font-medium placeholder-gray-400`}
                     placeholder="Tell us about your project..."
                   />
                   {errors.message && (
@@ -719,8 +693,8 @@ const Contact = () => {
                   {status === "submitting"
                     ? "Transmitting..."
                     : status === "success"
-                    ? "Transmission Sent!"
-                    : "Send Transmission"}
+                      ? "Transmission Sent!"
+                      : "Send Transmission"}
                 </button>
 
                 {status === "success" && (
