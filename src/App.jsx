@@ -37,6 +37,7 @@ function useInView(options = {}) {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +53,7 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id) => {
+    setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -77,8 +79,10 @@ const Navbar = () => {
             Apricity
           </span>
         </div>
+
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-2">
-          {["Home", "Services", "Process", "Work", "About"].map((item) => (
+          {["Home", "Services", "Process", "Work", "About", "Career"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
@@ -88,13 +92,43 @@ const Navbar = () => {
             </button>
           ))}
         </div>
-        <button
-          onClick={() => scrollToSection("contact")}
-          className="bg-gray-900 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-0.5 transition-all ml-2"
-        >
-          Let's Talk
-        </button>
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => {
+              if (window.innerWidth < 768) {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+              } else {
+                scrollToSection("contact");
+              }
+            }}
+            className="bg-gray-900 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-black/20 hover:shadow-black/40 hover:-translate-y-0.5 transition-all ml-2 z-50 relative"
+          >
+            {isMobileMenuOpen ? "Close" : "Let's Talk"}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full mt-4 p-4 bg-white/90 backdrop-blur-3xl rounded-[2rem] border border-white/50 shadow-xl shadow-black/10 flex flex-col gap-2 md:hidden animate-in fade-in slide-in-from-top-4 duration-200">
+          {["Home", "Services", "Process", "Work", "About", "Career"].map((item) => (
+            <button
+              key={item}
+              onClick={() => scrollToSection(item.toLowerCase())}
+              className="w-full text-left px-6 py-4 text-gray-800 hover:bg-gray-100 rounded-xl text-lg font-semibold transition-all"
+            >
+              {item}
+            </button>
+          ))}
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="w-full mt-2 bg-gray-900 text-white px-6 py-4 rounded-xl text-lg font-bold shadow-lg shadow-black/20 active:scale-95 transition-all"
+          >
+            Let's Talk
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
@@ -202,6 +236,8 @@ import {
   Terminal,
   Palette,
   Clapperboard,
+  Menu,
+  X,
 } from "lucide-react";
 
 const Services = () => {
@@ -517,6 +553,76 @@ const About = () => {
   );
 };
 
+const Career = () => {
+  const [ref, isVisible] = useInView({ triggerOnce: true });
+
+  const openings = [
+    {
+      title: "Frontend Developer",
+      type: "Remote",
+      desc: "We are looking for a React wizard to join our team.",
+    },
+    {
+      title: "UI/UX Designer",
+      type: "Remote",
+      desc: "Craft beautiful and intuitive digital experiences.",
+    },
+  ];
+
+  return (
+    <section id="career" className="py-32 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div
+          ref={ref}
+          className={`transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+        >
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Join the <span className="text-gray-500">Collective</span>
+            </h2>
+            <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
+              We are always looking for talented individuals to help us build the future.
+            </p>
+          </div>
+
+          <div className="grid gap-8 max-w-4xl mx-auto">
+            {openings.map((job, index) => (
+              <div
+                key={index}
+                className="modern-glass p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-6 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-gray-800 font-display mb-2">
+                    {job.title}
+                  </h3>
+                  <p className="text-gray-600 font-medium mb-1">{job.desc}</p>
+                  <span className="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-500 uppercase tracking-wide">
+                    {job.type}
+                  </span>
+                </div>
+                <a
+                  href={`mailto:hello.apricitystudios@gmail.com?subject=Application for ${job.title}`}
+                  className="bg-gray-900 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-black/20 hover:shadow-black/40 transition-all whitespace-nowrap"
+                >
+                  Apply Now
+                </a>
+              </div>
+            ))}
+            <div className="text-center mt-8">
+              <p className="text-gray-600">
+                Don't see your role? <a href="mailto:hello.apricitystudios@gmail.com?subject=General Application" className="font-bold text-gray-900 hover:underline">Send us your portfolio</a> anyway.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
 const Contact = () => {
   const [ref, isVisible] = useInView({ triggerOnce: true });
   const [formData, setFormData] = useState({
@@ -560,6 +666,13 @@ const Contact = () => {
     e.preventDefault();
     if (validate()) {
       setStatus("submitting");
+
+      const subject = `New Project Inquiry from ${formData.name}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const mailtoLink = `mailto:hello.apricitystudios@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+
       setTimeout(() => {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
@@ -811,7 +924,7 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {["Home", "Services", "Process", "Work", "About", "Contact"].map(
+              {["Home", "Services", "Process", "Work", "About", "Career", "Contact"].map(
                 (item) => (
                   <li key={item}>
                     <button
@@ -971,6 +1084,7 @@ function Home() {
         <Process />
         <Work />
         <About />
+        <Career />
         <Contact />
       </main>
       <Footer />
