@@ -882,7 +882,7 @@ const Footer = () => {
               Get In Touch
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 group">
+              <li className="flex items-start gap-2 group">
                 <div className="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-500 group-hover:text-gray-900 transition-colors">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -903,7 +903,7 @@ const Footer = () => {
                   Kathmandu, Nepal
                 </span>
               </li>
-              <li className="flex items-start gap-3 group">
+              <li className="flex items-start gap-2 group">
                 <div className="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-500 group-hover:text-gray-900 transition-colors">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -918,12 +918,10 @@ const Footer = () => {
                   href="mailto:hello.apricitystudios@gmail.com"
                   className="text-gray-600 hover:text-gray-900 transition-colors text-sm break-all leading-relaxed"
                 >
-                  hello.apricitystudios
-                  <wbr />
-                  @gmail.com
+                  hello.apricitystudios@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-3 group">
+              <li className="flex items-start gap-2 group">
                 <div className="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-500 group-hover:text-gray-900 transition-colors">
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
