@@ -11,6 +11,7 @@ export const projects = [
     color: "bg-gradient-to-br from-gray-700 to-gray-900",
     categories: ["web-development"],
     url: ecom,
+    liveLink: "https://example.com"
   },
   {
     title: "Restaurant Website",
@@ -19,15 +20,16 @@ export const projects = [
     color: "bg-gradient-to-br from-gray-200 to-gray-400",
     categories: ["web-development", "graphics-branding"],
     url: cafe,
+    liveLink: "https://example.com"
   },
   {
     title: "Restaurant ordering platform",
-
     desc: " A restaurant ordering platform with a completely separate Admin Panel hosted on a different domain. ",
     tags: ["Web", "Management", "Restaurant"],
     color: "bg-gradient-to-br from-slate-400 to-slate-600",
     categories: ["motion-graphics-vfx"],
     url: management,
+    liveLink: "https://example.com"
   },
   // {
   //     title: "Fintech Dashboard",
@@ -44,5 +46,6 @@ export const projects = [
     color: "bg-gradient-to-br from-zinc-400 to-zinc-600",
     categories: ["mobile-app-development"],
     url: echat,
+    liveLink: "https://example.com"
   },
 ];

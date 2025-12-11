@@ -100,8 +100,8 @@ const Work = () => {
                                 ref={ref}
                                 style={{ transitionDelay: `${index * 150}ms` }}
                                 className={`modern-glass rounded-[2rem] p-5 hover:-translate-y-3 transition-all duration-500 group ${isVisible
-                                        ? "opacity-100 translate-y-0"
-                                        : "opacity-0 translate-y-10"
+                                    ? "opacity-100 translate-y-0"
+                                    : "opacity-0 translate-y-10"
                                     }`}
                             >
                                 {/* Image container - clean version */}
@@ -131,7 +131,7 @@ const Work = () => {
                                         </div>
                                     )}
                                 </div>
-                                
+
                                 {/* Content below image */}
                                 <div className="px-2 pb-4">
                                     <h3 className="text-2xl font-bold text-gray-800 font-display mb-3 group-hover:text-gray-900 transition-colors">
@@ -140,6 +140,23 @@ const Work = () => {
                                     <p className="text-gray-600 mb-6 font-light leading-relaxed">
                                         {project.desc}
                                     </p>
+
+                                    {/* Live Link Button */}
+                                    {project.liveLink && (
+                                        <a
+                                            href={project.liveLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 mb-6 text-sm font-semibold text-gray-800 hover:text-blue-600 transition-colors group/link"
+                                        >
+                                            <span>Live View</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/link:translate-x-1 transition-transform">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                        </a>
+                                    )}
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
                                             <span
