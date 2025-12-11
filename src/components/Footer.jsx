@@ -75,7 +75,7 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/apricitystudio.co/?next=%2F"
                                 aria-label="Instagram"
                                 className="w-10 h-10 rounded-lg bg-gray-900 hover:bg-gray-800 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                             >
@@ -88,7 +88,7 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/apricity-studios-916301396/"
                                 aria-label="LinkedIn"
                                 className="w-10 h-10 rounded-lg bg-gray-900 hover:bg-gray-800 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                             >
